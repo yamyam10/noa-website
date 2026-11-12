@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="乃愛（NOA）のプロフィールとリンク。のんびり推し活中。">
+  <title>NOA のプロフィール</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #182238;
+      --muted: #7f8ba2;
+      --aqua: #bdeaff;
+      --aqua-deep: #68bff2;
+      --lilac: #a9c5ff;
+      --pink: #c6d6f7;
+      --lemon: #d7edff;
+      --white: #fff;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+    html { min-width: 320px; scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 18px 14px 28px;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 13% 13%, rgba(71, 133, 188, .23), transparent 25rem),
+        radial-gradient(ellipse at 88% 30%, rgba(83, 106, 170, .22), transparent 24rem),
+        linear-gradient(150deg, #eaf5ff 0%, #f3f6fc 56%, #e8edfa 100%);
+    }
+
+    a { color: inherit; }
+    .page { width: min(100%, 470px); margin: 0 auto; }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin: 3px 0 15px;
+      color: #63738f;
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+    }
+
+    .topline::before, .topline::after {
+      width: 18px;
+      height: 1px;
+      background: #b3c9e6;
+      content: "";
+    }
+
+    .profile-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 20px 24px;
+      border: 1px solid rgba(255,255,255,.95);
+      border-radius: 32px;
+      background: rgba(255,255,255,.84);
+      box-shadow: 0 20px 55px rgba(32, 54, 91, .16), inset 0 0 0 5px rgba(255,255,255,.62);
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .profile-card::before, .profile-card::after {
+      position: absolute;
+      width: 145px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(91, 137, 189, .15);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+    .profile-card::before { top: -98px; left: -75px; box-shadow: 0 0 0 13px rgba(132,196,239,.18), 0 0 0 26px rgba(150,170,219,.12); }
+    .profile-card::after { right: -100px; bottom: 60px; width: 180px; }
+
+    .card-label {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eaf3ff;
+      color: #527ba9;
+      font-size: .65rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      display: grid;
+      width: 130px;
+      aspect-ratio: 1;
+      place-items: center;
+      margin: 19px auto 13px;
+    }
+
+    .avatar {
+      display: block;
+      width: 108px;
+      aspect-ratio: 1;
+      border: 5px solid white;
+      border-radius: 43% 57% 51% 49% / 46% 45% 55% 54%;
+      background: #dceafa;
+      box-shadow: 0 8px 0 rgba(84, 126, 181, .2), 0 12px 28px rgba(57, 78, 123, .16);
+      object-fit: cover;
+      object-position: center;
+      transform: rotate(-5deg);
+    }
+
+    .orbit {
+      position: absolute;
+      inset: 3px;
+      border: 1px dashed rgba(104, 150, 203, .5);
+      border-radius: 50%;
+      transform: rotate(20deg);
+    }
+
+    .deco {
+      position: absolute;
+      display: grid;
+      width: 34px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 3px solid white;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(90, 83, 130, .12);
+      font-size: 1rem;
+    }
+    .deco.egg-decoration {
+      top: 3px;
+      right: 4px;
+      width: 38px;
+      border-radius: 48% 52% 43% 57% / 56% 43% 57% 44%;
+      background: #fffdf6;
+      box-shadow: 0 4px 10px rgba(90, 83, 130, .16);
+      transform: rotate(-12deg);
+    }
+    .egg-yolk {
+      display: grid;
+      position: relative;
+      z-index: 1;
+      width: 14px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 50%;
+      background: #ffcf52;
+      box-shadow: inset -2px -2px 0 rgba(217, 153, 49, .19);
+      color: #76583a;
+      font-size: 5px;
+      font-weight: 1000;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+    .deco.star {
+      bottom: 3px;
+      left: 4px;
+      background: #b9e8fb;
+      color: #467f9a;
+      transform: rotate(-12deg);
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 1000;
+      letter-spacing: .04em;
+      line-height: 1.25;
+    }
+    h1 .reading {
+      display: inline-block;
+      margin-left: 5px;
+      color: #4a83ba;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      vertical-align: .28em;
+    }
+    .name-latin {
+      margin: 4px 0 12px;
+      color: #8a98ad;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .32em;
+    }
+    .bio {
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+      color: #65728a;
+      font-size: .82rem;
+      line-height: 1.9;
+    }
+
+    .tags {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin: 16px 0 22px;
+    }
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid #e6edf7;
+      border-radius: 999px;
+      background: rgba(255,255,255,.88);
+      color: #65738b;
+      font-size: .68rem;
+      font-weight: 800;
+    }
+    .tag:first-child { border-color: #cbe8f5; color: #4386ac; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 2px 11px;
+      color: #64748e;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-align: left;
+    }
+    .section-title::after { height: 1px; flex: 1; background: #e4eaf3; content: ""; }
+
+    .link-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+    }
+    .link-card {
+      display: flex;
+      min-height: 64px;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 13px;
+      border: 1px solid #e7edf5;
+      border-radius: 17px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 4px 0 rgba(196, 209, 229, .48);
+      text-align: left;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    a.link-card:hover {
+      box-shadow: 0 2px 0 rgba(196, 209, 229, .48);
+      transform: translateY(2px);
+    }
+    .link-icon {
+      display: grid;
+      width: 38px;
+      flex: 0 0 38px;
+      aspect-ratio: 1;
+      place-items: center;
+      border-radius: 13px;
+      background: #e1f3fc;
+      color: #4389b5;
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+    .link-text { min-width: 0; flex: 1; }
+    .link-text strong { display: block; font-size: .82rem; font-weight: 900; }
+    .link-text small { display: block; margin-top: 3px; color: #8995a8; font-size: .66rem; }
+    .link-arrow { color: #8cabc9; font-size: 1.1rem; }
+
+    .fav-box {
+      position: relative;
+      z-index: 1;
+      margin-top: 21px;
+      padding: 15px;
+      border: 1px solid #e2ebf6;
+      border-radius: 18px;
+      background: linear-gradient(110deg, #eaf8fc, #f2f5ff 58%, #e9f0fc);
+      text-align: left;
+    }
+    .fav-title {
+      margin: 0 0 7px;
+      color: #60728e;
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+    .fav-copy { margin: 0; color: #65728a; font-size: .77rem; line-height: 1.8; }
+    .fav-copy strong { color: #4c83b4; }
+
+    .edit-note {
+      position: relative;
+      z-index: 1;
+      margin: 11px 0 0;
+      color: #919db0;
+      font-size: .63rem;
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 17px 0 0;
+      color: #77869d;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-align: center;
+    }
+    .footer span { color: #599dd0; }
+
+    :focus-visible { outline: 3px solid #5b9ac8; outline-offset: 3px; }
+
+    @media (min-width: 600px) {
+      body { display: grid; min-height: 100vh; place-items: center; padding: 32px 18px; }
+      .profile-card { padding: 31px 27px 27px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="topline">WELCOME TO MY PAGE</p>
+    <section class="profile-card" aria-labelledby="profile-name">
+      <span class="card-label"><span aria-hidden="true">✦</span> NOA'S PROFILE <span aria-hidden="true">✦</span></span>
+      <div class="avatar-wrap" aria-hidden="true">
+        <span class="orbit"></span>
+        <img class="avatar" src="S__23347202.jpg" alt="">
+        <span class="deco egg-decoration"><span class="egg-yolk">•ᴗ•</span></span>
+        <span class="deco star" aria-hidden="true">✦</span>
+      </div>
+      <h1 id="profile-name">乃愛<span class="reading">のあ</span></h1>
+      <p class="name-latin">N O A</p>
+      <p class="bio">のんびり推し活してます ☁️<br>固定してくれる人募集中 ♡</p>
+
+      <div class="tags" aria-label="好きなもの">
+        <span class="tag">#コンパス</span>
+        <span class="tag">#デルミン</span>
+        <span class="tag">#マルコス</span>
+        <span class="tag">#ハンギョドン</span>
+      </div>
+
+      <h2 class="section-title">♡　NOA'S LINKS</h2>
+      <nav class="link-list" aria-label="乃愛のリンク">
+        <a class="link-card" href="https://x.com/noooa_15" target="_blank" rel="noopener noreferrer">
+          <span class="link-icon" aria-hidden="true">𝕏</span>
+          <span class="link-text"><strong>X / @noooa_15</strong><small>日々のこと・のんびり推し活</small></span>
+          <span class="link-arrow" aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+      <aside class="fav-box">
+        <h2 class="fav-title">♡　LIKES &amp; LITTLE THINGS</h2>
+        <p class="fav-copy">すき：<strong>デルミン・マルコス・ハンギョドン</strong><br>趣味：ゲーム、アニメ、寝ること 💤<br>そして、旦那さんがだいすき！</p>
+      </aside>
+      <p class="edit-note">青と黒をベースに、ゆるっとかわいく 🫧</p>
+    </section>
+    <footer class="footer">made with <span>♡</span> by NOA</footer>
+  </main>
+</body>
+</html>
